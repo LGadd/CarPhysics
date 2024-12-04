@@ -7,62 +7,103 @@
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="style.css">
     <!-- Favicon (optional) -->
-    <link rel="icon" href="GaddLogo.png" type="image/x-icon">
+    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo-container">
             <!-- Replace 'path/to/logo.png' with the actual path to your logo -->
-            <img src="GaddLogo.png" alt="Car Physics Tool Logo" class="logo">
+            <img src="path/to/logo.png" alt="Car Physics Tool Logo" class="logo">
         </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#cta">Get Started</a></li>
+            </ul>
+        </nav>
         <!-- Theme Toggle Button -->
         <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
     </header>
 
     <!-- Main Content Section -->
     <main>
-        <section class="intro">
+        <!-- Intro Section -->
+        <section id="intro" class="intro">
             <h1>Welcome to the Ultimate Car Physics Tool</h1>
             <p>
                 Enhance your Unity projects with our advanced car physics asset. Featuring custom wheel colliders using Pacejka's Magic Formula, real-world data integration like gear ratios and torque curves, and a modular, fully customizable system.
             </p>
+            <!-- Animated Scroll Down Arrow -->
+            <a href="#features" class="scroll-down" aria-label="Scroll Down">⬇️</a>
         </section>
 
-        <!-- Unity WebGL Demo Container -->
-        <section class="demo">
-            <h2>Try Our WebGL Demo</h2>
-            <!-- Unity WebGL Build Container -->
-            <div id="unity-container">
-                <canvas id="unity-canvas"></canvas>
-                <div id="unity-loading-bar">
-                    <div id="unity-progress-bar-empty">
-                        <div id="unity-progress-bar-full"></div>
-                    </div>
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Custom Wheel Colliders</h3>
+                    <p>Utilize Pacejka's Magic Formula for realistic wheel behavior.</p>
                 </div>
-                <div id="unity-warning">Loading...</div>
-                <div id="unity-footer">
-                    <a href="https://unity.com" target="_blank">Unity WebGL</a>
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <h3>Real-World Data Integration</h3>
+                    <p>Incorporate actual gear ratios and torque curves for authenticity.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Modular & Customizable</h3>
+                    <p>Easily modify and extend functionalities to suit your project needs.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance Optimized</h3>
+                    <p>Ensures smooth operation even in complex simulations.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="features">
-            <h2>Features</h2>
-            <ul>
-                <li>Custom Wheel Colliders with Pacejka's Magic Formula</li>
-                <li>Real-World Data Integration (Gear Ratios, Torque Curves)</li>
-                <li>Modular and Fully Customizable</li>
-                <li>Easy-to-Use Interface</li>
-                <li>Optimized for Performance</li>
-            </ul>
+        <!-- WebGL Demo Section -->
+        <section id="demo" class="demo">
+            <h2>Try Our WebGL Demo</h2>
+            <p>Experience the physics tool in action with our pre-made vehicles.</p>
+            <!-- Demo Button to Open Modal -->
+            <button class="btn" id="open-demo">Launch Demo</button>
         </section>
 
-        <!-- Call to Action -->
-        <section class="cta">
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"This physics tool has revolutionized my Unity projects. The realism is unmatched!"</p>
+                    <h4>- Alex Johnson</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Integration was seamless, and the customization options are incredible."</p>
+                    <h4>- Maria Garcia</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"A must-have asset for any serious game developer working with vehicles."</p>
+                    <h4>- Liam Smith</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="cta" class="cta">
             <h2>Get Started Today!</h2>
             <a href="purchase-link.html" class="btn">Purchase Now</a>
+            <!-- Open Contact Form Modal -->
+            <button class="btn secondary" id="open-contact">Contact Us</button>
         </section>
     </main>
 
@@ -71,15 +112,43 @@
         <p>&copy; 2023 Your Company Name. All rights reserved.</p>
         <div class="social-links">
             <!-- Add your social media links here -->
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">Twitter</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">GitHub</a>
         </div>
     </footer>
 
-    <!-- Link to the external JavaScript file -->
+    <!-- WebGL Demo Modal -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-demo">&times;</span>
+            <iframe src="https://yourwebglbuild.com" title="WebGL Demo" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content contact-form">
+            <span class="close" id="close-contact">&times;</span>
+            <h2>Contact Us</h2>
+            <form action="submit-form-url" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript files -->
     <script src="script.js"></script>
-    <!-- Unity WebGL Loader (Replace with your actual Unity loader script) -->
-    <script src="Build/Unity Builds.loader.js"></script>
+    <!-- Optional: External libraries for sliders (e.g., Swiper.js) -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
