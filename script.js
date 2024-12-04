@@ -1,5 +1,3 @@
-// script.js
-
 // Theme Toggle Functionality
 const themeToggleBtn = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
@@ -33,13 +31,13 @@ themeToggleBtn.addEventListener('click', () => {
 // Ensure that Unity's loader script is correctly referenced in index.html
 window.addEventListener('load', () => {
     createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/yourUnityBuild.data.unityweb",
-        frameworkUrl: "Build/yourUnityBuild.framework.js.unityweb",
-        codeUrl: "Build/yourUnityBuild.wasm.unityweb",
+        dataUrl: "Build/ Unity Builds.data.unityweb",
+        frameworkUrl: "Build/Unity Builds.framework.js.unityweb",
+        codeUrl: "Build/Unity Builds.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "Your Company",
-        productName: "Car Physics Tool",
-        productVersion: "1.0",
+        companyName: "Gadd Games",
+        productName: "Vehicle Physics",
+        productVersion: "0.1.0",
     }).then((unityInstance) => {
         // Unity is loaded and running
         console.log("Unity WebGL loaded successfully.");
