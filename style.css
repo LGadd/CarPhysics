@@ -299,7 +299,7 @@ footer {
     padding: 20px;
     border: 1px solid #888;
     width: 95%;
-    max-width: 1200px; /* Increased max-width to accommodate larger demos */
+    max-width: 1000px; /* Increased max-width to accommodate larger demos */
     border-radius: 10px;
     position: relative;
 }
