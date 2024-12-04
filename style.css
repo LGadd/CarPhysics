@@ -299,7 +299,7 @@ footer {
     padding: 20px;
     border: 1px solid #888;
     width: 90%;
-    max-width: 800px; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Could be more or less, depending on screen size */
     border-radius: 10px;
     position: relative;
 }
