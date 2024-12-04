@@ -3,166 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Vehicle Physics Engine</title>
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <!-- You can include any WebGL libraries here, e.g., Three.js -->
+    <title>Car Physics Tool</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <div class="container">
-            <h1>VehiclePhysicsPro</h1>
-            <nav>
-                <ul>
-                    <li><a href="#intro">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#demo">Demo</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="logo-container">
+            <!-- Replace 'path/to/logo.png' with the actual path to your logo -->
+            <img src="path/to/logo.png" alt="Car Physics Tool Logo" class="logo">
         </div>
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
     </header>
 
-   <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">My project</div>
-      </div>
-    </div>
-    <script>
+    <!-- Main Content Section -->
+    <main>
+        <section class="intro">
+            <h1>Welcome to the Ultimate Car Physics Tool</h1>
+            <p>
+                Enhance your Unity projects with our advanced car physics asset. Featuring custom wheel colliders using Pacejka's Magic Formula, real-world data integration like gear ratios and torque curves, and a modular, fully customizable system.
+            </p>
+        </section>
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Unity Builds.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/Unity Builds.data.br",
-        frameworkUrl: buildUrl + "/Unity Builds.framework.js.br",
-        codeUrl: buildUrl + "/Unity Builds.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "My project",
-        productVersion: "0.1.0",
-        showBanner: unityShowBanner,
-      };
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-
-      } 
-      else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
-    </script>
-
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <h3>Pacejka Tyre Model</h3>
-                    <p>Simulate accurate tyre behavior under various conditions with the advanced Pacejka model.</p>
+        <!-- Unity WebGL Demo Container -->
+        <section class="demo">
+            <h2>Try Our WebGL Demo</h2>
+            <!-- Unity WebGL Build Container -->
+            <div id="unity-container">
+                <canvas id="unity-canvas"></canvas>
+                <div id="unity-loading-bar">
+                    <div id="unity-progress-bar-empty">
+                        <div id="unity-progress-bar-full"></div>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <h3>Custom Gear Ratios</h3>
-                    <p>Define and adjust gear ratios to match your specific vehicle setup.</p>
+                <div id="unity-warning">Loading...</div>
+                <div id="unity-footer">
+                    <a href="https://unity.com" target="_blank">Unity WebGL</a>
                 </div>
-                <div class="feature-item">
-                    <h3>Anti-Roll Bars</h3>
-                    <p>Enhance vehicle stability with configurable anti-roll bar settings.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Torque Curves</h3>
-                    <p>Customize torque curves for precise engine performance tuning.</p>
-                </div>
-                <!-- Add more features as needed -->
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Custom Wheel Colliders with Pacejka's Magic Formula</li>
+                <li>Real-World Data Integration (Gear Ratios, Torque Curves)</li>
+                <li>Modular and Fully Customizable</li>
+                <li>Easy-to-Use Interface</li>
+                <li>Optimized for Performance</li>
+            </ul>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Have questions or need support? Reach out to us!</p>
-            <form action="your-form-handler" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <!-- Call to Action -->
+        <section class="cta">
+            <h2>Get Started Today!</h2>
+            <a href="purchase-link.html" class="btn">Purchase Now</a>
+        </section>
+    </main>
 
+    <!-- Footer Section -->
     <footer>
-        <div class="container">
-            <p>&copy; 2023 VehiclePhysicsPro. All rights reserved.</p>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <div class="social-links">
+            <!-- Add your social media links here -->
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
         </div>
     </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+    <!-- Unity WebGL Loader (Replace with your actual Unity loader script) -->
+    <script src="Build/yourUnityBuild.loader.js"></script>
 </body>
 </html>
