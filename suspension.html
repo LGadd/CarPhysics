@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Physics Tool</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="GaddLogo.png" type="image/x-icon">
+    <!-- Google Fonts (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <!-- Replace 'path/to/logo.png' with the actual path to your logo -->
+            <img src="GaddLogo.png" alt="Gadd Games" class="logo">
+        </div>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#cta">Get Started</a></li>
+            </ul>
+        </nav>
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="intro">
+            <h1>Welcome to the Ultimate Car Physics Tool</h1>
+            <p>
+                Enhance your Unity projects with our advanced car physics asset. Featuring custom wheel colliders using Pacejka's Magic Formula, real-world data integration like gear ratios and torque curves, and a modular, fully customizable system.
+            </p>
+            <!-- Animated Scroll Down Arrow -->
+            <a href="#features" class="scroll-down" aria-label="Scroll Down">⬇️</a>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Simple Implementation</h3>
+                    <p>F=(k*ΔL)-(d*V)</p>
+                    
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛞</div>
+                    <h3>Real-World Data Integration</h3>
+                    <p>Incorporate actual gear ratios and torque curves for authenticity.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Modular & Customizable</h3>
+                    <p>Easily modify and extend functionalities to suit your project needs.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Performance Optimized</h3>
+                    <p>Ensures smooth operation even in complex simulations.</p>
+                </div>
+            </div>
+        </section>
+
+
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Gadd Games. All rights reserved.</p>
+        <div class="social-links">
+            <!-- Add your social media links here -->
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">Twitter</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub">GitHub</a>
+        </div>
+    </footer>
+
+
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content contact-form">
+            <span class="close" id="close-contact">&times;</span>
+            <h2>Contact Us</h2>
+            <form action="submit-form-url" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript files -->
+    <script src="script.js"></script>
+    <!-- Optional: External libraries for sliders (e.g., Swiper.js) -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
